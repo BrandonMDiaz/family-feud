@@ -3,7 +3,7 @@
 This app let you play a game call family feud, this is just a board and is not intended to play
 online, it should be a helper for a reunion with friend.
 
-You can add your questions and start playing with them
+You can add your questions with the answers and start playing.
 
 ## Available Scripts
 
