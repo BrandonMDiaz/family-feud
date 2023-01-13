@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Family feud
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app let you play a game call family feud, this is just a board and is not intended to play
+online, it should be a helper for a reunion with friend.
+
+You can add your questions and start playing with them
 
 ## Available Scripts
 
