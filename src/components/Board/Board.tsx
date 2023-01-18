@@ -3,21 +3,40 @@ import * as Styles from "./styles";
 import Score from "../Score/Score";
 import AnswerBoard from "../AnswersBoard/AnswersBoard";
 import { GameContext } from "../../hooks/gameContext";
+import { Button } from "@mui/material";
 
 function Board() {
-  const [points, setPoints] = useState(0);
   const gameContext = useContext(GameContext);
-  const currentQuestion = gameContext.currentQuestion;
-  const question = gameContext.questions[currentQuestion];
 
+  const [points, setPoints] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(
+    gameContext.currentQuestion
+  );
+
+  const question = gameContext.questions[currentQuestion];
+  const nextQuestion = () => {
+    if (gameContext.areAllQuestionsAnswered()) {
+      //end game
+    } else {
+      gameContext.changeCurrentQuestion();
+      setCurrentQuestion(gameContext.currentQuestion);
+    }
+  };
+  const onAnswerClick = (pointsGained: number) => {
+    setPoints(points + pointsGained);
+  };
   return (
-    <Styles.Container>
+    <Styles.Container key={currentQuestion}>
       <Styles.OuterBorder>
         <Styles.Board>
           <Score score={points}></Score>
-          <AnswerBoard answers={question.answers}></AnswerBoard>
+          <AnswerBoard
+            answers={question.answers}
+            onAnswerClick={onAnswerClick}
+          ></AnswerBoard>
         </Styles.Board>
       </Styles.OuterBorder>
+      <Button onClick={nextQuestion}>Next</Button>
     </Styles.Container>
   );
 }

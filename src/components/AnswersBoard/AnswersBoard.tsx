@@ -1,40 +1,55 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import * as Styles from "./styles";
-import Score from "../Score/Score";
-import { GameContext } from "../../hooks/gameContext";
 import AnswerDisplay from "../Answer/AnswerDisplay";
 import { Answer } from "../../models/Answers";
+import { AnswerContainer } from "../Answer/styles";
 
 interface Props {
   answers: Answer[];
+  onAnswerClick: (points: number) => void;
 }
-function AnswerBoard({ answers }: Props) {
-  const gameContext = useContext(GameContext);
-  const currentQuestion = gameContext.currentQuestion;
-  const question = gameContext.questions[currentQuestion];
-  const halfLength = Math.ceil(question.answers.length / 2);
+function AnswerBoard({ answers, onAnswerClick }: Props) {
+  const [answersDisplayed, setAnswersDisplayed] = useState<string[]>([]);
+
+  const displayAnswer = (id: string): boolean =>
+    !!answersDisplayed.find((el) => el === id);
+
+  const answerClicked = (answer: Answer) => {
+    if (!displayAnswer(answer.id)) {
+      setAnswersDisplayed([...answersDisplayed, answer.id]);
+      onAnswerClick(answer.points);
+    }
+  };
+
+  const halfLength = Math.ceil(answers.length / 2);
   const col1 = answers.slice(0, halfLength);
-  const col2 = answers.slice(halfLength, question.answers.length);
+  const col2 = answers.slice(halfLength, answers.length);
 
   return (
     <Styles.OuterBorder>
       <Styles.Board>
         <Styles.Col1>
-          {col1.map((el) => (
-            <AnswerDisplay
-              answer={el.answer}
-              points={el.points}
-              display={false}
-            ></AnswerDisplay>
+          {col1.map((el, index) => (
+            <AnswerContainer key={el.id} onClick={() => answerClicked(el)}>
+              <AnswerDisplay
+                position={index + 1}
+                answer={el.answer}
+                points={el.points}
+                display={displayAnswer(el.id)}
+              ></AnswerDisplay>
+            </AnswerContainer>
           ))}
         </Styles.Col1>
         <Styles.Col2>
-          {col2.map((el) => (
-            <AnswerDisplay
-              answer={el.answer}
-              points={el.points}
-              display={false}
-            ></AnswerDisplay>
+          {col2.map((el, index) => (
+            <AnswerContainer key={el.id} onClick={() => answerClicked(el)}>
+              <AnswerDisplay
+                position={index + 5}
+                answer={el.answer}
+                points={el.points}
+                display={displayAnswer(el.id)}
+              ></AnswerDisplay>
+            </AnswerContainer>
           ))}
         </Styles.Col2>
       </Styles.Board>

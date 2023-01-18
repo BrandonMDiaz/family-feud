@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
 `;
 export const AnswerContainer = styled.div`
+  width: 100%;
   flex-grow: 3;
   display: flex;
   align-items: center;
@@ -15,7 +16,16 @@ export const PointsContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
+export const AnswerClosed = styled.div`
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+export const Number = styled.div`
+  font-size: 4rem;
+`;
 export const ShowEffect = styled.div`
   display: flex;
   align-items: center;

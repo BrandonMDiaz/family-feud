@@ -1,19 +1,37 @@
-import React, { useContext } from "react";
+import React from "react";
 import * as Styles from "./styles";
 
 interface Props {
+  position: number;
   answer: string;
   points: number;
   display?: boolean;
 }
 
-const AnswerDisplay = ({ answer, points, display = false }: Props) => {
+const AnswerDisplay = ({
+  position,
+  answer,
+  points,
+  display = false,
+}: Props) => {
+  const answerHidden = () => {
+    console.log(position);
+    return (
+      <Styles.AnswerClosed>
+        <Styles.Number>{position}</Styles.Number>
+      </Styles.AnswerClosed>
+    );
+  };
   return (
     <Styles.Container>
-      <Styles.ShowEffect>
-        <Styles.AnswerContainer>{answer}</Styles.AnswerContainer>
-        <Styles.PointsContainer>{points}</Styles.PointsContainer>
-      </Styles.ShowEffect>
+      {display ? (
+        <Styles.ShowEffect>
+          <Styles.AnswerContainer>{answer}</Styles.AnswerContainer>
+          <Styles.PointsContainer>{points}</Styles.PointsContainer>
+        </Styles.ShowEffect>
+      ) : (
+        answerHidden()
+      )}
     </Styles.Container>
   );
 };

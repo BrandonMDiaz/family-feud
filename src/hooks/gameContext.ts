@@ -9,7 +9,7 @@ interface Game {
     points: number;
   }[];
   areAllQuestionsAnswered: () => boolean;
-  changeCurrentQuestions: () => void;
+  changeCurrentQuestion: () => void;
   addQuestions: (question: Question) => void;
 }
 
@@ -23,8 +23,8 @@ export const game: Game = {
   areAllQuestionsAnswered() {
     return this.questions.length === this.currentQuestion;
   },
-  changeCurrentQuestions() {
-    if (this.areAllQuestionsAnswered()) {
+  changeCurrentQuestion() {
+    if (!this.areAllQuestionsAnswered()) {
       this.currentQuestion += 1;
     }
   },

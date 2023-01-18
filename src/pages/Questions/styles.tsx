@@ -7,12 +7,30 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const Card = styled.div`
-  width: 50%;
-  height: 50%;
-  background-color: white;
-  border-radius: 2%;
+
+export const CardBody = styled.div`
+  width: 70%;
+  height: 70%;
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 5%;
 `;
 export const Text = styled.h3`
-  color: #0e0e0e;
+  color: #ffffff;
+`;
+export const Col1 = styled.div`
+  width: 50%;
+  display: flex;
+  height: 100%;
+  padding-top: 20%;
+`;
+export const Col2 = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  align-items: center;
+  justify-content: center;
 `;

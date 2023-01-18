@@ -16,6 +16,7 @@ const AnswerInput = ({ id, onInputChange, onDelete }: Props) => {
       <td>
         <TextField
           id="answer"
+          fullWidth
           label="Respuesta"
           variant="outlined"
           onChange={(e) => onInputChange(e, id)}
@@ -23,6 +24,7 @@ const AnswerInput = ({ id, onInputChange, onDelete }: Props) => {
       </td>
       <td>
         <Input
+          fullWidth
           id="points"
           type="number"
           placeholder="puntos"

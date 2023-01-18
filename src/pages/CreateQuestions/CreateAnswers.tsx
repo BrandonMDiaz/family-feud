@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
 import * as Styles from "./styles";
+import * as GlobalStyles from "../../common/styles/global";
 import { Button, TextField } from "@mui/material";
 import { Answer } from "../../models/Answers";
 import { answersArray } from "./ArrayOfEmptyAnswers";
-import AnswerInput from "../../components/Answer/AnswerInput";
 import { GameContext } from "../../hooks/gameContext";
-import Question from "../../models/Questions";
-import * as GlobalStyles from "../../common/styles/global";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import AnswerInput from "../../components/Answer/AnswerInput";
+import Question from "../../models/Questions";
 
 function CreateQuestionAndAnswersPage() {
   const gameContext = useContext(GameContext);
@@ -66,42 +66,64 @@ function CreateQuestionAndAnswersPage() {
   };
   return (
     <GlobalStyles.Container key={reload}>
-      <Styles.Title>Creando pregunta</Styles.Title>
-      <TextField onChange={(e) => setQuestion(e.target.value)}></TextField>
-      <table>
-        <thead>
-          <tr>
-            <th>Respuestas</th>
-            <th>Puntos</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {answers.map((data) => (
-            <AnswerInput
-              key={data.id}
-              id={data.id}
-              answer={data.answer}
-              points={data.points}
-              onInputChange={onAnswerChange}
-              onDelete={deleteAnswer}
-            />
-          ))}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <Button onClick={addAnswer}>Agregar otra respuesta</Button>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-      <Button variant="contained" onClick={startGame}>
-        Comenzar a jugar
-      </Button>
-      <Button variant="contained" onClick={addAnotherQuestions}>
-        Agregar otra pregunta
-      </Button>
+      <GlobalStyles.Card>
+        <GlobalStyles.CardTitle>
+          <GlobalStyles.Title>MasPopular</GlobalStyles.Title>
+        </GlobalStyles.CardTitle>
+        <Styles.Title>CREAR PREGUNTAS</Styles.Title>
+        <Styles.InputContainer>
+          <Styles.Text>Pregunta</Styles.Text>
+
+          <TextField
+            fullWidth
+            onChange={(e) => setQuestion(e.target.value)}
+          ></TextField>
+
+          <Styles.Table>
+            <colgroup>
+              <col span={1} style={{ width: "70%" }} />
+              <col span={1} style={{ width: "15%" }} />
+              <col span={1} style={{ width: "15%" }} />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th>Respuestas</th>
+                <th>Puntos</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {answers.map((data) => (
+                <AnswerInput
+                  key={data.id}
+                  id={data.id}
+                  answer={data.answer}
+                  points={data.points}
+                  onInputChange={onAnswerChange}
+                  onDelete={deleteAnswer}
+                />
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>
+                  <Button onClick={addAnswer}>Agregar otra respuesta</Button>
+                </td>
+              </tr>
+            </tfoot>
+          </Styles.Table>
+        </Styles.InputContainer>
+
+        <Styles.Container>
+          <Button variant="contained" onClick={startGame}>
+            Comenzar a jugar
+          </Button>
+          <Button variant="contained" onClick={addAnotherQuestions}>
+            Agregar otra pregunta
+          </Button>
+        </Styles.Container>
+      </GlobalStyles.Card>
     </GlobalStyles.Container>
   );
 }

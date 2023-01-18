@@ -16,6 +16,11 @@ export const Board = styled.div`
   background-color: rgb(184, 215, 252);
 `;
 
+export const AnsweContiner = styled.div`
+  height: 100%;
+  width: 100%;
+`;
+
 export const Col1 = styled.div`
   height: 100%;
   width: 100%;
