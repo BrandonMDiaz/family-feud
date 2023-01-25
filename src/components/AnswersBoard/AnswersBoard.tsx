@@ -3,6 +3,7 @@ import * as Styles from "./styles";
 import AnswerDisplay from "../Answer/AnswerDisplay";
 import { Answer } from "../../models/Answers";
 import { AnswerContainer } from "../Answer/styles";
+import playAudio from "../../common/utils/sound";
 
 interface Props {
   answers: Answer[];
@@ -17,6 +18,7 @@ function AnswerBoard({ answers, onAnswerClick }: Props) {
   const answerClicked = (answer: Answer) => {
     if (!displayAnswer(answer.id)) {
       setAnswersDisplayed([...answersDisplayed, answer.id]);
+      playAudio("correct");
       onAnswerClick(answer.points);
     }
   };

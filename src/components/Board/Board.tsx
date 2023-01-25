@@ -4,6 +4,7 @@ import Score from "../Score/Score";
 import AnswerBoard from "../AnswersBoard/AnswersBoard";
 import { GameContext } from "../../hooks/gameContext";
 import { Button } from "@mui/material";
+import playAudio from "../../common/utils/sound";
 
 function Board() {
   const gameContext = useContext(GameContext);
@@ -26,7 +27,12 @@ function Board() {
     setPoints(points + pointsGained);
   };
   return (
-    <Styles.Container key={currentQuestion}>
+    <Styles.Container
+      key={currentQuestion}
+      onKeyDown={() => {
+        playAudio("error");
+      }}
+    >
       <Styles.OuterBorder>
         <Styles.Board>
           <Score score={points}></Score>

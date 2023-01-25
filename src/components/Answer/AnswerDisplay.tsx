@@ -15,7 +15,6 @@ const AnswerDisplay = ({
   display = false,
 }: Props) => {
   const answerHidden = () => {
-    console.log(position);
     return (
       <Styles.AnswerClosed>
         <Styles.Number>{position}</Styles.Number>

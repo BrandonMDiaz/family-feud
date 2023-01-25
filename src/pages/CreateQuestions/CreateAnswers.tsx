@@ -55,7 +55,6 @@ function CreateQuestionAndAnswersPage() {
       answers,
     };
     gameContext.addQuestions(questionsWithAnswers);
-    console.log(gameContext);
   };
 
   const startGame = () => {
