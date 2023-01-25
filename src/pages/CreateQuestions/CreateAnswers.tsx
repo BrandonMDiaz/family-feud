@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import AnswerInput from "../../components/Answer/AnswerInput";
 import Question from "../../models/Questions";
+import SaveQuestionsDialog from "../../components/SaveQuestionsDialog/SaveQuestionsDialog";
 
 function CreateQuestionAndAnswersPage() {
   const gameContext = useContext(GameContext);
@@ -56,6 +57,7 @@ function CreateQuestionAndAnswersPage() {
     gameContext.addQuestions(questionsWithAnswers);
     console.log(gameContext);
   };
+
   const startGame = () => {
     saveQuestion();
     navigate("/jugar");
@@ -81,9 +83,9 @@ function CreateQuestionAndAnswersPage() {
 
           <Styles.Table>
             <colgroup>
-              <col span={1} style={{ width: "70%" }} />
-              <col span={1} style={{ width: "15%" }} />
-              <col span={1} style={{ width: "15%" }} />
+              <col span={1} style={{ width: "80%" }} />
+              <col span={1} style={{ width: "10%" }} />
+              <col span={1} style={{ width: "10%" }} />
             </colgroup>
 
             <thead>
@@ -116,12 +118,10 @@ function CreateQuestionAndAnswersPage() {
         </Styles.InputContainer>
 
         <Styles.Container>
-          <Button variant="contained" onClick={startGame}>
-            Comenzar a jugar
-          </Button>
-          <Button variant="contained" onClick={addAnotherQuestions}>
+          <SaveQuestionsDialog onSuccess={startGame} />
+          <GlobalStyles.CustomButton onClick={addAnotherQuestions}>
             Agregar otra pregunta
-          </Button>
+          </GlobalStyles.CustomButton>
         </Styles.Container>
       </GlobalStyles.Card>
     </GlobalStyles.Container>

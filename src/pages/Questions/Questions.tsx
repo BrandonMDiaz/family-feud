@@ -17,16 +17,33 @@ function QuestionsPage() {
         <Styles.CardBody>
           <Styles.Col1>
             <Styles.Text>
-              Hay que crear las preguntas que se usaran en el juego, has click
-              en crear preguntas para comenzar a crear tus preguntas. Si ya
-              tienes preguntas haz click en el boton de cargar preguntas.
+              Hay que crear las preguntas que se usaran en el juego.
+            </Styles.Text>
+            <Styles.Text>
+              Haz click en crear preguntas para comenzar a crear tus preguntas.
+            </Styles.Text>
+            <Styles.Text>
+              Si ya has jugado antes y tienes el archivo que se generó al
+              comenzar a jugar, haz click en el boton de cargar preguntas.
+            </Styles.Text>
+            <Styles.Text>
+              Si deseas jugar con preguntas generadas por el equipo de
+              MasPopular, utiliza el ultimo botón.
             </Styles.Text>
           </Styles.Col1>
           <Styles.Col2>
-            <Button variant="contained" onClick={() => navigate("/crear")}>
+            <GlobalStyles.CustomButton
+              variant="contained"
+              onClick={() => navigate("/crear")}
+            >
               Crear Preguntas
-            </Button>
-            <Button variant="contained">Cargar Preguntas</Button>
+            </GlobalStyles.CustomButton>
+            <GlobalStyles.CustomButton variant="contained">
+              Cargar Preguntas
+            </GlobalStyles.CustomButton>
+            <GlobalStyles.CustomButton variant="contained">
+              Usar preguntas por default
+            </GlobalStyles.CustomButton>
           </Styles.Col2>
         </Styles.CardBody>
       </GlobalStyles.Card>

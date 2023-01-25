@@ -17,13 +17,16 @@ export const CardBody = styled.div`
   gap: 5%;
 `;
 export const Text = styled.h3`
-  color: #ffffff;
+  color: #000000;
+  padding: 0 !important;
+  margin-bottom: 5px !important;
 `;
 export const Col1 = styled.div`
   width: 50%;
   display: flex;
+  flex-direction: column;
   height: 100%;
-  padding-top: 20%;
+  padding-top: 10%;
 `;
 export const Col2 = styled.div`
   width: 50%;
@@ -31,6 +34,6 @@ export const Col2 = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5%;
+  padding-top: 15%;
   align-items: center;
-  justify-content: center;
 `;

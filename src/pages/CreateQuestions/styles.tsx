@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
+  gap: 2%;
 `;
 
-export const Title = styled.h1`
-  color: white;
+export const Title = styled.h2`
+  color: #e1a339;
 `;
 
 export const Text = styled.h4``;
@@ -21,6 +23,10 @@ export const Col = styled.div<{ grow: number }>`
 `;
 export const Table = styled.table`
   width: 100%;
+  & tbody th tr {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 `;
 export const InputContainer = styled.div`
   width: 80%;
@@ -28,7 +34,6 @@ export const InputContainer = styled.div`
   padding-left: 2%;
   padding-right: 2%;
   border-radius: 20px;
-  background-color: #31c7c4;
   overflow-y: auto;
   margin-bottom: 3%;
 `;

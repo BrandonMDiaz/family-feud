@@ -12,29 +12,31 @@ interface Props extends Answer {
 
 const AnswerInput = ({ id, onInputChange, onDelete }: Props) => {
   return (
-    <tr>
-      <td>
-        <TextField
-          id="answer"
-          fullWidth
-          label="Respuesta"
-          variant="outlined"
-          onChange={(e) => onInputChange(e, id)}
-        />
-      </td>
-      <td>
-        <Input
-          fullWidth
-          id="points"
-          type="number"
-          placeholder="puntos"
-          onChange={(e) => onInputChange(e, id)}
-        />
-      </td>
-      <td>
-        <Button onClick={() => onDelete(id)}>Delete</Button>
-      </td>
-    </tr>
+    <React.Fragment>
+      <tr>
+        <td>
+          <TextField
+            id="answer"
+            fullWidth
+            label="Respuesta"
+            variant="outlined"
+            onChange={(e) => onInputChange(e, id)}
+          />
+        </td>
+        <td>
+          <Input
+            fullWidth
+            id="points"
+            type="number"
+            placeholder="puntos"
+            onChange={(e) => onInputChange(e, id)}
+          />
+        </td>
+        <td>
+          <Button onClick={() => onDelete(id)}>Delete</Button>
+        </td>
+      </tr>
+    </React.Fragment>
   );
 };
 
