@@ -1,8 +1,6 @@
 import React from "react";
 import * as Styles from "./styles";
 import * as GlobalStyles from "../../common/styles/global";
-
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function QuestionsPage() {

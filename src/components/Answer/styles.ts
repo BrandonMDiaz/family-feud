@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   height: 100%;
   width: 100%;
+  border: 3px black solid;
 `;
 export const AnswerContainer = styled.div`
   width: 100%;
@@ -24,6 +25,7 @@ export const AnswerClosed = styled.div`
   height: 100%;
 `;
 export const Number = styled.div`
+  color: white;
   font-size: 4rem;
 `;
 export const ShowEffect = styled.div`
