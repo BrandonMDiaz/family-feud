@@ -6,33 +6,34 @@ export const Container = styled.div`
   border: 3px black solid;
 `;
 export const AnswerContainer = styled.div`
-  width: 100%;
-  flex-grow: 3;
+  width: 80%;
   display: flex;
   align-items: center;
 `;
 export const PointsContainer = styled.div`
-  flex-grow: 1;
+  width: 20%;
+  font-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-export const AnswerClosed = styled.div`
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-`;
+
 export const Number = styled.div`
   color: white;
   font-size: 4rem;
 `;
+export const AnswerClosed = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+`;
 export const ShowEffect = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
   height: 100%;
+  min-width: 100%;
 
   -moz-animation: showHide 1s forwards; /* Firefox */
   -webkit-animation: showHide 1s forwards; /* Safari and Chrome */

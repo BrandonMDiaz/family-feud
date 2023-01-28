@@ -23,17 +23,17 @@ const AnswerInput = ({ id, onInputChange, onDelete }: Props) => {
             onChange={(e) => onInputChange(e, id)}
           />
         </td>
-        <td>
+        <td className="points">
           <Input
             fullWidth
-            id="points"
             type="number"
-            placeholder="puntos"
             onChange={(e) => onInputChange(e, id)}
           />
         </td>
         <td>
-          <Button onClick={() => onDelete(id)}>Delete</Button>
+          <Button onClick={() => onDelete(id)} style={{ color: "red" }}>
+            Delete
+          </Button>
         </td>
       </tr>
     </React.Fragment>

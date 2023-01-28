@@ -16,7 +16,7 @@ export const Board = styled.div`
   background-color: rgb(184, 215, 252);
 `;
 
-export const AnsweContiner = styled.div`
+export const AnswerContainer = styled.div`
   height: 100%;
   width: 100%;
 `;

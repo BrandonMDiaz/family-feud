@@ -1,0 +1,5 @@
+export enum gameActionTypes {
+  ADD_QUESTIONS = "ADD_QUESTIONS",
+  ADD_TEAM = "ADD_TEAM",
+  CHANGE_TOTAL_POINTS = "CHANGE_TOTAL_POINTS ",
+}

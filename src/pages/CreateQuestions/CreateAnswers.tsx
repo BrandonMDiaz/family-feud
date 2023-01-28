@@ -54,7 +54,7 @@ function CreateQuestionAndAnswersPage() {
       question,
       answers,
     };
-    gameContext.addQuestions(questionsWithAnswers);
+    gameContext.addQuestion(questionsWithAnswers);
   };
 
   const startGame = () => {
@@ -69,7 +69,7 @@ function CreateQuestionAndAnswersPage() {
     <GlobalStyles.Container key={reload}>
       <GlobalStyles.Card>
         <GlobalStyles.CardTitle>
-          <GlobalStyles.Title>MasPopular</GlobalStyles.Title>
+          <GlobalStyles.Title>Maspopular</GlobalStyles.Title>
         </GlobalStyles.CardTitle>
         <Styles.Title>CREAR PREGUNTAS</Styles.Title>
         <Styles.InputContainer>

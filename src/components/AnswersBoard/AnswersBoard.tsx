@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import * as Styles from "./styles";
 import AnswerDisplay from "../Answer/AnswerDisplay";
 import { Answer } from "../../models/Answers";
-import { AnswerContainer } from "../Answer/styles";
 import playAudio from "../../common/utils/sound";
 
 interface Props {
@@ -32,26 +31,32 @@ function AnswerBoard({ answers, onAnswerClick }: Props) {
       <Styles.Board>
         <Styles.Col1>
           {col1.map((el, index) => (
-            <AnswerContainer key={el.id} onClick={() => answerClicked(el)}>
+            <Styles.AnswerContainer
+              key={el.id}
+              onClick={() => answerClicked(el)}
+            >
               <AnswerDisplay
                 position={index + 1}
                 answer={el.answer}
                 points={el.points}
                 display={displayAnswer(el.id)}
               ></AnswerDisplay>
-            </AnswerContainer>
+            </Styles.AnswerContainer>
           ))}
         </Styles.Col1>
         <Styles.Col2>
           {col2.map((el, index) => (
-            <AnswerContainer key={el.id} onClick={() => answerClicked(el)}>
+            <Styles.AnswerContainer
+              key={el.id}
+              onClick={() => answerClicked(el)}
+            >
               <AnswerDisplay
                 position={index + 5}
                 answer={el.answer}
                 points={el.points}
                 display={displayAnswer(el.id)}
               ></AnswerDisplay>
-            </AnswerContainer>
+            </Styles.AnswerContainer>
           ))}
         </Styles.Col2>
       </Styles.Board>

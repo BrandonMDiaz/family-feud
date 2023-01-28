@@ -5,6 +5,7 @@ import QuestionsPage from "./pages/Questions/Questions";
 import CreateQuestionAndAnswersPage from "./pages/CreateQuestions/CreateAnswers";
 import Board from "./components/Board/Board";
 import NavbarWrapper from "./pages/NavbarWrapper/NavbarWrapper";
+import TeamsPage from "./pages/TeamsPage/TeamsPage";
 
 const router = createBrowserRouter([
   {
@@ -16,15 +17,19 @@ const router = createBrowserRouter([
         element: <MenuPage />,
       },
       {
+        path: "equipos",
+        element: <TeamsPage />,
+      },
+      {
         path: "preguntas",
         element: <QuestionsPage />,
       },
       {
-        path: "/crear",
+        path: "crear",
         element: <CreateQuestionAndAnswersPage />,
       },
       {
-        path: "/jugar",
+        path: "jugar",
         element: <Board />,
       },
     ],

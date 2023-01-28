@@ -22,10 +22,11 @@ export const Col = styled.div<{ grow: number }>`
   flex-direction: column;
 `;
 export const Table = styled.table`
+  margin-top: 30px;
   width: 100%;
-  & tbody th tr {
-    padding-left: 2%;
-    padding-right: 2%;
+  & > tbody > tr > td.points {
+    padding-left: 33px;
+    padding-right: 33px;
   }
 `;
 export const InputContainer = styled.div`

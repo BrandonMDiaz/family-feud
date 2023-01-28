@@ -28,3 +28,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const BtnContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+`;

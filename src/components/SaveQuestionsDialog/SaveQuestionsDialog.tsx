@@ -11,7 +11,7 @@ export default function SaveQuestionsDialog({ onSuccess }: Props) {
 
   const downloadQuestions = () => {
     const fileName = "MasPopular.json";
-    const blob = new Blob([JSON.stringify(gameContext.questions)], {
+    const blob = new Blob([JSON.stringify(gameContext.game.questions)], {
       type: "text/json",
     });
 

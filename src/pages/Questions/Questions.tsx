@@ -7,45 +7,49 @@ function QuestionsPage() {
   const navigate = useNavigate();
 
   return (
-    <Styles.Container>
+    <GlobalStyles.Container>
       <GlobalStyles.Card>
         <GlobalStyles.CardTitle>
-          <GlobalStyles.Title>MasPopular</GlobalStyles.Title>
+          <GlobalStyles.Title>Maspopular</GlobalStyles.Title>
         </GlobalStyles.CardTitle>
+        <Styles.Text>
+          Antes de comenzar tenemos que agregar las preguntas que se usaran en
+          el juego
+        </Styles.Text>
         <Styles.CardBody>
           <Styles.Col1>
             <Styles.Text>
-              Hay que crear las preguntas que se usaran en el juego.
+              Si ya tienes un archivo con tus preguntas cargalo presionando en
+              este boton
             </Styles.Text>
-            <Styles.Text>
-              Haz click en crear preguntas para comenzar a crear tus preguntas.
-            </Styles.Text>
-            <Styles.Text>
-              Si ya has jugado antes y tienes el archivo que se generó al
-              comenzar a jugar, haz click en el boton de cargar preguntas.
-            </Styles.Text>
-            <Styles.Text>
-              Si deseas jugar con preguntas generadas por el equipo de
-              MasPopular, utiliza el ultimo botón.
-            </Styles.Text>
+            <GlobalStyles.CustomButton variant="contained">
+              Cargar preguntas
+            </GlobalStyles.CustomButton>
           </Styles.Col1>
-          <Styles.Col2>
+          <Styles.Col1>
+            <Styles.Text>
+              Si quieres crear nuevas preguntas presiona este boton
+            </Styles.Text>
             <GlobalStyles.CustomButton
               variant="contained"
               onClick={() => navigate("/crear")}
             >
               Crear Preguntas
             </GlobalStyles.CustomButton>
-            <GlobalStyles.CustomButton variant="contained">
-              Cargar Preguntas
-            </GlobalStyles.CustomButton>
+          </Styles.Col1>
+          <Styles.Col1>
+            <Styles.Text>
+              Si deseas jugar con preguntas generadas por el equipo de
+              MasPopular, haz click en este botón.
+            </Styles.Text>
+
             <GlobalStyles.CustomButton variant="contained">
               Usar preguntas por default
             </GlobalStyles.CustomButton>
-          </Styles.Col2>
+          </Styles.Col1>
         </Styles.CardBody>
       </GlobalStyles.Card>
-    </Styles.Container>
+    </GlobalStyles.Container>
   );
 }
 

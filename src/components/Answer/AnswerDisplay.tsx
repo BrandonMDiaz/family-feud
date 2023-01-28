@@ -14,13 +14,6 @@ const AnswerDisplay = ({
   points,
   display = false,
 }: Props) => {
-  const answerHidden = () => {
-    return (
-      <Styles.AnswerClosed>
-        <Styles.Number>{position}</Styles.Number>
-      </Styles.AnswerClosed>
-    );
-  };
   return (
     <Styles.Container>
       {display ? (
@@ -29,7 +22,9 @@ const AnswerDisplay = ({
           <Styles.PointsContainer>{points}</Styles.PointsContainer>
         </Styles.ShowEffect>
       ) : (
-        answerHidden()
+        <Styles.AnswerClosed>
+          <Styles.Number>{position}</Styles.Number>
+        </Styles.AnswerClosed>
       )}
     </Styles.Container>
   );

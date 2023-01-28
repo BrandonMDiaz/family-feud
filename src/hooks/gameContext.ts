@@ -1,33 +1,27 @@
-import React from "react";
+import { createContext } from "react";
 import Question from "../models/Questions";
+import { Teams } from "../models/Game";
+import { InitialGameState } from "../models/GameContext";
 
-interface Game {
-  questions: Question[];
-  currentQuestion: number;
-  totalPoints: {
-    team: string;
-    points: number;
-  }[];
-  areAllQuestionsAnswered: () => boolean;
-  changeCurrentQuestion: () => void;
-  addQuestions: (question: Question) => void;
-}
+const team1 = {
+  id: 0,
+  name: "SuperDuperTeam",
+};
+const team2 = {
+  id: 1,
+  name: "ThePartyMachine",
+};
+const initialTeams: Teams = [team1, team2];
 
-export const game: Game = {
-  questions: [],
-  totalPoints: [],
-  currentQuestion: 0,
-  addQuestions(question: Question) {
-    this.questions.push(question);
+export const initialGameState: InitialGameState = {
+  game: {
+    questions: [],
+    totalPoints: [],
+    teams: initialTeams,
   },
-  areAllQuestionsAnswered() {
-    return this.questions.length === this.currentQuestion;
-  },
-  changeCurrentQuestion() {
-    if (!this.areAllQuestionsAnswered()) {
-      this.currentQuestion += 1;
-    }
-  },
+  addQuestion: (question: Question) => {},
+  addTeams: (teams: Teams) => {},
+  changePoints: (points: number) => {},
 };
 
-export const GameContext = React.createContext<Game>(game);
+export const GameContext = createContext<InitialGameState>(initialGameState);
